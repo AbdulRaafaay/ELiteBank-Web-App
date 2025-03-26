@@ -8,10 +8,12 @@ import SignUp from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import Admin from "./components/pages/Admin";
 import AdminDashboard from "./components/adminDashboard/AdminDashboard";
+import UserDashboard from "./components/userDashboard/User-dashboard";
+
 
 function AppWrapper() {
   const location = useLocation();
-  const hideNavbarRoutes = ["/admin-dashboard"];
+  const hideNavbarRoutes = ["/admin-dashboard","/user-dashboard"];
 
   return (
     <>
@@ -25,6 +27,8 @@ function AppWrapper() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
+
       </Routes>
     </>
   );

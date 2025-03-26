@@ -1,9 +1,19 @@
+import { useNavigate } from "react-router-dom"; 
 import "./Pages.css";
 
-export default function Login({ closeModal, openSignUp }) {
+export default function Login({ closeModal }) {
+
+    const navigate = useNavigate();
+
+    function handleSubmit () {
+        closeModal();
+        navigate("/user-dashboard");
+    }
+
+
     return (
         <div className="modal-overlay" onClick={closeModal}>
-            <form className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <form action={handleSubmit} className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2>Login</h2>
                 <div className="input-field">
                     <label>Username</label>
@@ -14,9 +24,6 @@ export default function Login({ closeModal, openSignUp }) {
                     <input type="password" />
                 </div>
                 <button className="login-submit">Login</button>
-                <p className="signup-text">
-                    Don't have an account? <span className="signup-link" onClick={openSignUp}>Sign Up</span>
-                </p>
             </form>
         </div>
     );

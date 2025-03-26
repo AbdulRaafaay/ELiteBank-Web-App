@@ -1,0 +1,375 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: "Hahmlet", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  /* Layout */
+.dashboard {
+    display: flex;
+    gap: 40px; /* Space between sidebar and navbar */
+}
+
+  /* Sidebar Box */
+.sidebar-box {
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 210px;
+    background-color: #000000f1;
+    padding: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.043);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+  /* Sidebar Navigation */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+}
+
+.nav-menu a:hover {
+    color: #5E191A;
+}
+
+.user_navbar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: left;
+    align-items: center;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+    padding: 20px 30px;
+    
+}
+
+.logo {
+    width: 165px;
+    height: 162px;
+}
+
+.home {
+    font-family: "Hahmlet", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    padding-left: 100px;
+}
+
+.home:hover {
+    color: #5E191A;
+}
+
+.other {
+    margin-top: 0;
+}
+
+.logout {
+    margin-top: 25px;
+}
+
+  /* Partition Line */
+.dim-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 10px 0 ;
+    margin-bottom: 0;
+}
+
+  /* Nav Header */
+.nav-header {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+  /* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    padding-left: 0;
+}
+
+h2 {
+    font-family: "Hahmlet", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+  /* Cards */
+
+.cards-section h3 {
+    margin-left: 20px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #5E191A;
+    margin-bottom: 30px;
+}
+
+.cards {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    display: flex;
+    gap: 20px;
+}
+
+  /* Card Styles */
+
+.card {
+    width: 300px;
+    height: 180px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  /* Blue Card */
+
+.blue-card {
+    background: linear-gradient(135deg, #0044cc, #0066ff);
+    color: white;
+}
+
+  /* Red Card */
+.red-card {
+    background: linear-gradient(135deg, #cc0000, #ff3333);
+    color: white;
+}
+
+  /* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+  /* Card Chip */
+.card-chip {
+    width: 40px;
+    height: 30px;
+    background-color: gold;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+  /* Card Number */
+.card-number {
+    font-size: 18px;
+    text-align: left;
+    margin-top: 1px;
+    font-weight: 400;
+}
+
+.amount {
+    font-weight: 550;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+  /* Card Holder Name */
+.total {
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+  /* Expiry Date */
+.expiry {
+    font-size: 12px;
+    text-align: right;
+    font-weight: 400;
+}
+
+.card-image {
+    width: 45px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    
+}
+
+.rightbar {
+    padding-top: 32px;
+}
+
+.account-details {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    color: white;
+    font-family: "poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    width: 250px;
+    padding: 10px;
+}
+.Query {
+    font-weight: 400;
+}
+
+.Ans {
+    font-weight: 500;
+    color: #5E191A
+}
+
+
+
+/* temp */
+admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #121212;
+  }
+  
+  /* Sidebar Styling - No Scrollbar */
+  .sidebar {
+    width: 250px;
+    background-color: #111;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Navigation Menu - Scrollbar Removed */
+  .adminNav {
+    flex-grow: 1;
+    padding: 20px 0;
+    overflow: hidden; /* Changed from auto to hidden to remove scrollbar */
+  }
+  
+  .adminNav:hover {
+    overflow-y: auto; /* Optional: Show scrollbar only on hover */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .adminNav::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .adminNav {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Rest of your CSS remains exactly the same */
+  .logo {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 20px;
+    gap: 15px;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .logo h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .elite {
+    color: #d44a4a;
+    font-weight: 700;
+  }
+  
+  .adminNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .adminNav ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+  }
+  
+  .adminNav ul li:hover {
+    background-color: #1e1e1e;
+  }
+  
+  .adminNav ul li.active {
+    background-color: #2a2a2a;
+    border-left: 3px solid #d44a4a;
+  }
+  
+  .adminNav ul li svg {
+    margin-right: 12px;
+    font-size: 18px;
+    color: #a0a0a0;
+  }
+  
+  .adminNav ul li.active svg,
+  .adminNav ul li:hover svg {
+    color: #d44a4a;
+  }
+  
+  .logout {
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #a0a0a0;
+    transition: all 0.3s ease;
+    border-top: 1px solid #2a2a2a;
+  }
+  
+  .logout:hover {
+    background-color: #1e1e1e;
+    color: #d44a4a;
+  }
+  
+  .logout svg {
+    margin-right: 12px;
+    font-size: 18px;
+  }
