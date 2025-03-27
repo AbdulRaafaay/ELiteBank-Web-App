@@ -1,0 +1,159 @@
+/* General Page Styling */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #292929);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.settings-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Settings Content */
+.settings-content {
+    padding-top: 1px;
+    width: 1000px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.settings-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.edit-profile {
+    padding: 8px 12px;
+    background: #d44a4a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.edit-profile:hover {
+    background: #d44a4a;
+}
+
+/* Settings Box */
+.settings-box {
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Box Heading */
+.box-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #d44a4a;
+    margin-bottom: 15px;
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* Info Items */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Icons */
+.icon {
+    font-size: 18px;
+    color: #d44a4a;
+}
+
+/* Labels */
+.info-item label {
+    font-size: 14px;
+    color: #bbb;
+    font-weight: 500;
+}
+
+/* Info Text */
+.info-item p {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+.info-item {
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.settings-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Save Button */
+.save-btn {
+    margin-top: 25px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background: #d44a4a; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.save-btn:hover {
+    background: #d44a4a; 
+}
+
+.edit-profile:hover {
+    background: rgba(212, 74, 74, 0.7);
+}

@@ -1,0 +1,93 @@
+/* General Page Styling */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #292929);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout */
+.dashboard {
+    display: flex;
+    gap: 40px;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+    padding-bottom: 40px;
+    padding-top: 35px;
+}
+
+/* Notifications Box */
+.notifications-box {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Box Heading */
+.box-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #d44a4a;
+    margin-bottom: 15px;
+}
+
+/* Notification Header */
+.notification-header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+/* Notification List */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual Notification */
+.notification-item {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Notification Status Tags */
+.status-tag {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Status Colors */
+.status-tag.read {
+    background: rgba(100, 200, 100, 0.2);
+    color: #64c864;
+}
+
+.status-tag.unread {
+    background: rgba(200, 100, 100, 0.2);
+    color: #d44a4a;
+}
