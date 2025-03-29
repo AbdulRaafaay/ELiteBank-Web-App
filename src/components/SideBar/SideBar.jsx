@@ -10,6 +10,7 @@ export default function SideBar ({navItems,iconArray,activeTab,setActiveTab}) {
         navigate("/");
   };
     return (
+        
         <>
             <aside className="sidebar">
                 <div className="logo">
@@ -20,6 +21,8 @@ export default function SideBar ({navItems,iconArray,activeTab,setActiveTab}) {
                     <ul>
                     {navItems.map((item) => {
                         const IconComponent = iconArray[item.icon];
+                        console.log("Item icon:", item.icon);
+                        console.log("iconArray keys:", Object.keys(iconArray));
                         return (
                         <li
                             key={item.id}
@@ -29,8 +32,10 @@ export default function SideBar ({navItems,iconArray,activeTab,setActiveTab}) {
                             }}
                         >
                             <IconComponent /> {item.page}
+                            
                         </li>
                         );
+                        
                     })}
                     </ul>
                 </nav>
@@ -39,5 +44,6 @@ export default function SideBar ({navItems,iconArray,activeTab,setActiveTab}) {
                 </div>
             </aside>
         </>
+        
     )
 }

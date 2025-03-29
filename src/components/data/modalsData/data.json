@@ -40,5 +40,48 @@
             "page":"Reports & Statements",
             "icon":"FaChartBar"    
         }
+    ],
+
+    "user": [
+        {
+            "id":9,
+            "page":"Account",
+            "icon":"FaTachometerAlt"    
+        },
+        {
+            "id":10,
+            "page":"Transactions",
+            "icon":"FaExchangeAlt"    
+        },
+        {
+            "id":11,
+            "page":"Reports & Statements",
+            "icon":"FaChartBar"    
+        },
+        {
+            "id":12,
+            "page":"Notifications",
+            "icon":"FaLock"    
+        },
+        {
+            "id":13,
+            "page":"Loan",
+            "icon":"FaMoneyCheckAlt"    
+        },
+        {
+            "id":14,
+            "page":"Others",
+            "icon":"FaEllipsisH"    
+        },
+        {
+            "id":15,
+            "page":"Settings",
+            "icon":"FaCog"    
+        },
+        {
+            "id":16,
+            "page":"Help",
+            "icon":"FaQuestionCircle"    
+        }
     ]
 }

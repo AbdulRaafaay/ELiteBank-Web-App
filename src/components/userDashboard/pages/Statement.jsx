@@ -1,78 +1,128 @@
-import React from "react";
-import "./Statement.css";
-import Rightbar from "./Rightbar.jsx"
-import Statement_box from "./Statement_box.jsx";
+import React, { useState } from 'react';
+import { FaSearch, FaFilePdf, FaFileCsv, FaFileAlt, FaCalendarAlt, FaFilter, FaDownload } from 'react-icons/fa';
+import './Statement.css';
 
-export default function Statement() {
-    return (
-    <main>
-        <div className="user_navbar">
-            <img src="../src/images/logotriotech.png" alt="logoTrioTech" className="logo" />
-            <div className="text">
-                <h1 className="top">Elite</h1>
-                <h1 className="bottom">Bank</h1>
-            </div>
-            <div>
-                <h1 className="home">Home</h1>
-            </div>
+export default function ReportManagement() {
+  const [activeTab, setActiveTab] = useState('statements');
+  const [dateRange, setDateRange] = useState({
+    start: '',
+    end: ''
+  });
+
+  const reportTypes = [
+    { id: 'R001', name: 'Transaction History', description: 'Detailed transaction records' },
+    { id: 'R002', name: 'Account Summary', description: 'Monthly account summary' },
+    { id: 'R003', name: 'Interest Calculation', description: 'Interest earned/paid report' }
+  ];
+
+  const handleGenerateReport = (type) => {
+    alert(`Generating ${type} report from ${dateRange.start || 'beginning'} to ${dateRange.end || 'now'}`);
+  };
+
+  return (
+    <div className="report-management">
+      <header className="report-header">
+        <h1>Report Management</h1>
+        <div className="controls">
+          <div className="search-bar">
+            <FaSearch />
+            <input type="text" placeholder="Search reports..." />
+          </div>
         </div>
+      </header>
 
-      <div className="dashboard">
-        {/* Sidebar Box */}
-        <aside className="sidebar-box">
-          <nav className="nav-menu">
-            <a href="#">Account</a>
-            <a href="#">Statements & Reports</a>
-            <a href="#">Loan Management</a>
-            <a href="#">Transactions</a>
-            <a href="#">Notifications & Alerts</a>
+      <div className="report-tabs">
+        <button className={`report-tab ${activeTab === 'statements' ? 'active' : ''}`} onClick={() => setActiveTab('statements')}>
+          <FaFileAlt /> Statement
+        </button>
+        <button className={`report-tab ${activeTab === 'reports' ? 'active' : ''}`} onClick={() => setActiveTab('reports')}>
+          <FaFilter /> Transaction Reports
+        </button>
+        <button className={`report-tab ${activeTab === 'exports' ? 'active' : ''}`} onClick={() => setActiveTab('exports')}>
+          <FaDownload /> Data Exports
+        </button>
+      </div>
 
-            {/* Partition Line */}
-            <div className="dim-line"></div>
-
-            <div className="nav-header"></div>
-            <a href="#" className="other" >Others</a>
-            <a href="#">Settings</a>
-            <a href="#">Help & Support</a>
-            <a href="#" className="logout">Logout</a>
-          </nav>
-        </aside>
-
-        {/* Main Content */}
-
-        <main className="main-content">
-            <h2>Statements and Reports</h2>
-                    <div className="cards-section">
-                    <Statement_box 
-                        heading="March 2025 Statement"
-                        deposit="$2,000"
-                        withdraw="$795"
-                        balance="$5,250.45"
-                        download="March"
-                    />
-                    <Statement_box 
-                        heading="Feburary 2025 Statement"
-                        deposit="$2,500"
-                        withdraw="$1,200"
-                        balance="$3,800"
-                        download="Feburary"
-                    />
-                
-            </div>
-        </main>
-
-            <div className="rightbar">
-                    <Rightbar query="Account number" answer="(603) 555-0123" />
-                    <Rightbar query="Swift code" answer="68488" />
-                    <Rightbar query="IBAN" answer="CY02132164091270421" />
-                    <Rightbar query="Credit interest rate" answer="20%" />
-                    <Rightbar query="Overdue limit" answer="10$" />
-                    <Rightbar query="Account name" answer="TrioTech" />
-                    <Rightbar query="Branch" answer="Islamabad (048)" />
-                    <Rightbar query="Debit interest rate" answer="7.658%" />
+      <div className="report-content">
+        {activeTab === 'statements' && (
+          <div className="statement-section">
+            <div className="report-filters">
+              <div className="filter-group">
+                <label><FaCalendarAlt /> Date Range</label>
+                <div className="date-range">
+                  <input type="date" value={dateRange.start} onChange={(e) => setDateRange({...dateRange, start: e.target.value})} />
+                  <span>to</span>
+                  <input type="date" value={dateRange.end} onChange={(e) => setDateRange({...dateRange, end: e.target.value})} />
+                </div>
+              </div>
             </div>
 
-        </div>
-    </main>
-    );
+            <div className="report-actions">
+              <button className="generate-btn pdf-btn" onClick={() => handleGenerateReport('PDF Statement')}>
+                <FaFilePdf /> Generate PDF Statement
+              </button>
+              <button className="generate-btn csv-btn" onClick={() => handleGenerateReport('CSV Statement')}>
+                <FaFileCsv /> Generate CSV Statement
+              </button>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'reports' && (
+          <div className="reports-section">
+            <div className="report-cards">
+              {reportTypes.map(report => (
+                <div key={report.id} className="report-card">
+                  <h3>{report.name}</h3>
+                  <p>{report.description}</p>
+                  <div className="report-params">
+                    <div className="param-group">
+                      <label>Date Range</label>
+                      <div className="date-range">
+                        <input type="date" value={dateRange.start} onChange={(e) => setDateRange({...dateRange, start: e.target.value})} />
+                        <span>to</span>
+                        <input type="date" value={dateRange.end} onChange={(e) => setDateRange({...dateRange, end: e.target.value})} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="report-card-actions">
+                    <button className="generate-btn" onClick={() => handleGenerateReport(report.name)}>
+                      Generate Report
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'exports' && (
+          <div className="exports-section">
+            <div className="export-options">
+              <div className="export-option">
+                <div className="export-icon">
+                  <FaFilePdf />
+                </div>
+                <h3>PDF Export</h3>
+                <p>Export transaction data in PDF format</p>
+                <button className="export-btn" onClick={() => handleGenerateReport('PDF Export')}>
+                  Export PDF
+                </button>
+              </div>
+              <div className="export-option">
+                <div className="export-icon">
+                  <FaFileCsv />
+                </div>
+                <h3>CSV Export</h3>
+                <p>Export transaction data in CSV format</p>
+                <button className="export-btn" onClick={() => handleGenerateReport('CSV Export')}>
+                  Export CSV
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
